@@ -1,0 +1,85 @@
+#playArea {
+  background-color: darkblue;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+}
+
+.space {
+  justify-content: center;
+  padding: 5px;
+}
+.playerName {
+  font-style: italic;
+  display: flex;
+  border: 5px solid white;
+}
+.playerHand {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.hand {
+  flex-direction: column;
+  border: 5px solid black;
+}
+
+#p1 {
+  position: left;
+}
+#p2 {
+  position: right;
+}
+
+#board {
+  object-position: center;
+  display: grid;
+  border: 3px solid black;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  grid-auto-rows: repeat(4, 1fr);
+  width: 50%;
+}
+
+#moveCounter {
+  display: flex;
+  justify-self: bottom;
+}
+/* #A1 {
+}
+#A2 {
+}
+#A3 {
+}
+#A4 {
+}
+#B1 {
+}
+#B2 {
+}
+#B3 {
+}
+#B4 {
+}
+#C1 {
+}
+#C2 {
+}
+#C3 {
+}
+#C4 {
+}
+#D1 {
+}
+#D2 {
+}
+#D3 {
+}
+#D4 {
+} */
