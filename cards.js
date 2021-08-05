@@ -1,3 +1,5 @@
+let Blue1 = document.getElementById("Blue1");
+
 function flip() {
   let coin = 0;
   coin = Math.random();
@@ -14,10 +16,10 @@ function flip() {
 class card {
   constructor() {
     this.owner = 0;
-    this.power = Math.floor(Math.random() * 9);
+    this.power = Math.floor(Math.random() * 9) + 1;
     this.pDef = Math.floor(Math.random() * 9);
     this.mDef = Math.floor(Math.random() * 9);
-    this.dmg = flip() === "heads" ? "physical" : "magical";
+    this.dmg = flip() === "heads" ? "p" : "m";
     this.aN = flip() === "heads" ? true : false;
     this.aNE = flip() === "heads" ? true : false;
     this.aE = flip() === "heads" ? true : false;
@@ -40,3 +42,5 @@ class card {
     }
   }
 }
+let test1 = new card();
+Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
