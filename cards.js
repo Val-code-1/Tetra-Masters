@@ -41,6 +41,7 @@ class card {
       console.log("hello");
     }
   }
+  // API call
 }
 let test1 = new card();
 Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
