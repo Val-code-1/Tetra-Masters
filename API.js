@@ -12,3 +12,16 @@ const settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
+
+const key = "e5e28d699069f90b230ad4d66e6a33b1";
+const city = "sydney";
+
+fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}`)
+  //JSON = JavaScript Object Notation
+  .then((response) => response.json())
+  .then((data) => {
+    //All functionality happens,
+    // AFTER the promise resolves.
+    console.log(data);
+    console.log(data.city.coord.lat + data.city.coord.lon);
+  });
