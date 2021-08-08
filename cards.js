@@ -41,6 +41,7 @@ class card {
       console.log("hello");
     }
   }
+  // API call
 }
 fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
   method: "GET",

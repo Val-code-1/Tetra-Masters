@@ -2,29 +2,38 @@
   background-color: rgb(157, 157, 238);
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-top: auto;
+  padding-bottom: 2em;
+  padding-left: 5em;
+  padding-right: 5em;
 }
 
 #header {
+  background-color: rgb(157, 157, 238);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .space {
   justify-content: center;
   padding: 5px;
   border: 2px solid black;
-  height: 8em;
-  width: 6em;
+  height: 10em;
+  width: 7.5em;
 }
 .playerName {
   font-style: italic;
+  color: rgb(228, 228, 228);
+  font-size: x-large;
+  justify-content: center;
   display: flex;
-  border: 5px solid white;
+  /* border: 5px solid white; */
 }
 .playerHand {
-  display: flex;
+  background-color: rgb(120, 120, 185);
   flex-direction: column;
+  justify-content: space-around;
   gap: 5px;
   margin: 0em 5em;
 }
@@ -34,31 +43,41 @@
   height: 8em;
   width: 6em;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
 #p1 {
-  position: left;
+  order: -1;
+  justify-content: flex-start;
+  border: 5px solid rgb(36, 24, 143);
 }
 #p2 {
-  position: right;
+  order: +1;
+  justify-content: flex-end;
+  border: 5px solid rgb(143, 24, 24);
 }
 
 #board {
-  object-position: center;
   display: grid;
-  border: 3px solid black;
-  justify-content: center;
+  padding: 0.5em;
+  border: 10px solid rgb(228, 228, 228);
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
   grid-auto-rows: repeat(4, 1fr);
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
   /* width: 50%; */
 }
 
 #moveCounter {
+  order: -2;
   display: flex;
-  justify-self: bottom;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 /* #A1 {
 }
