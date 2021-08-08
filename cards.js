@@ -51,10 +51,13 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
 })
   .then((response) => response.json())
   .then((data) => {
-    //All functionality happens,
-    // AFTER the promise resolves.
-    console.log(data);
-  });
+    console.log(data.Classic);
 
-let test1 = new card();
-Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
+    let tmpArray = [];
+    for (var i = 0; i < data.results.length; i++) {
+      tmpArray.push(data.results[i].NeededInfo);
+
+      let test1 = new card();
+      Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
+    }
+  });
