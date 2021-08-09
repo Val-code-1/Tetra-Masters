@@ -61,10 +61,12 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
     console.log(data.Classic);
 
     let tmpArray = [];
-    for (var i = 0; i < data.results.length; i++) {
-      tmpArray.push(data.results[i].NeededInfo);
-
-      let test1 = new card();
-      Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
+    for (var i = 200; i < 299; i++) {
+      tmpArray.push(data.Classic[i].img);
     }
+    randomElement = tmpArray[Math.floor(Math.random() * tmpArray.length)];
+    console.log(tmpArray);
+    console.log(randomElement);
+    let test1 = new card();
+    Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
   });
