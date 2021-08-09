@@ -48,19 +48,23 @@ class card {
     }
   }
 }
-// fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
-//   method: "GET",
-//   headers: {
-//     "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
-//     "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     //All functionality happens,
-//     // AFTER the promise resolves.
-//     console.log(data);
-//   });
 
-let test1 = new card();
-Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
+fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
+    "x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.Classic);
+
+    let tmpArray = [];
+    for (var i = 0; i < data.results.length; i++) {
+      tmpArray.push(data.results[i].NeededInfo);
+
+      let test1 = new card();
+      Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
+    }
+  });
