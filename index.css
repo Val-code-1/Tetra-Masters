@@ -16,6 +16,9 @@
 }
 
 .space {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: repeat(3, 1fr);
   justify-content: center;
   padding: 5px;
   border: 2px solid black;
@@ -42,7 +45,7 @@
   border: 5px solid black;
   height: 8em;
   width: 6em;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
 }

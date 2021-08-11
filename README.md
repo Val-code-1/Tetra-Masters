@@ -6,3 +6,4 @@ Tim: Get images from api usable for cards. Randomly generate them when new card 
 
 Ben "Successfully able to generate card objects. Began to write code for combat conditionals"
 Neal "Created visual mockup, initial HTML/CSS for play area, player hand spaces and move counter. Will continue to refine."
+Neal 8/8 "Fixed gutters between rows on game-board grid."
