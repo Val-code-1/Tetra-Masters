@@ -64,7 +64,8 @@ const imgSet = async (tmpArray) => {
   }
 };
 
-fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
+fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks?locale=enUS", {
+
   method: "GET",
   headers: {
     "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
@@ -73,14 +74,13 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
 })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data.Classic);
+    console.log(data);
 
     let tmpArray = [];
-    for (var i = 200; i < 299; i++) {
-      tmpArray.push(data.Classic[i].img);
-      console.log(tmpArray);
-      let randomElement = tmpArray[Math.floor(Math.random() * tmpArray.length)];
-      console.log(randomElement);
+
+    for (var i = 0; i < 176; i++) {
+      tmpArray.push(data[i].imgAnimated);
+
     }
     imgSet(tmpArray);
   });
