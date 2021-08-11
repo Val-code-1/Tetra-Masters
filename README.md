@@ -1,9 +1,9 @@
 TO DO LIST
 
-Ben: Assign arrow visibility to card object arrow statements.
+Ben: Change img size in css to better fit divs.
 Neal: Remove vertical gap in board grid. Map 8 arrows to appear around card in on each corner/edge.
 Tim: Get images from api usable for cards. Randomly generate them when new card is called.
 
-Ben "Successfully able to generate card objects. Began to write code for combat conditionals"
+Ben "Spent a lot of time on async api calls that we don't need but glad I looked into it. Wrote a function that will push up the api imgs on the divs"
 Neal "Created visual mockup, initial HTML/CSS for play area, player hand spaces and move counter. Will continue to refine."
 Neal 8/8 "Fixed gutters between rows on game-board grid."

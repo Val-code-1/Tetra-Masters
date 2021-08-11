@@ -1,14 +1,18 @@
 let Blue1 = document.getElementById("Blue1");
+let Blue2 = document.getElementById("Blue2");
+let Blue3 = document.getElementById("Blue3");
+let Blue4 = document.getElementById("Blue4");
+let Blue5 = document.getElementById("Blue5");
 
 function flip() {
   let coin = 0;
   coin = Math.random();
-  console.log(coin);
+  // console.log(coin);
   if (coin >= 0.5) {
-    console.log("heads");
+    // console.log("heads");
     return "heads";
   } else {
-    console.log("tails");
+    // console.log("tails");
     return "tails";
   }
 }
@@ -48,6 +52,17 @@ class card {
     }
   }
 }
+const imgSet = async (tmpArray) => {
+  for (let i = 1; i < 6; i++) {
+    let randomImg = tmpArray.pop();
+    console.log(randomImg);
+    let img = document.createElement("img");
+    img.setAttribute("id", `Blue${i}Img`);
+    img.setAttribute("class", "cardImgs");
+    img.src = randomImg;
+    document.getElementById(`Blue${i}`).appendChild(img);
+  }
+};
 
 fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
   method: "GET",
@@ -63,10 +78,14 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards", {
     let tmpArray = [];
     for (var i = 200; i < 299; i++) {
       tmpArray.push(data.Classic[i].img);
+      console.log(tmpArray);
+      let randomElement = tmpArray[Math.floor(Math.random() * tmpArray.length)];
+      console.log(randomElement);
     }
-    randomElement = tmpArray[Math.floor(Math.random() * tmpArray.length)];
-    console.log(tmpArray);
-    console.log(randomElement);
-    let test1 = new card();
-    Blue1.textContent = test1.power + test1.dmg + test1.pDef + test1.mDef;
+    imgSet(tmpArray);
   });
+
+// This generates the card and puts the stats on the div
+let card1 = new card();
+Blue1.textContent = card1.power + card1.dmg + card1.pDef + card1.mDef;
+// let randomElement1 = imgArray[Math.floor(Math.random() * imgArray.length)];
