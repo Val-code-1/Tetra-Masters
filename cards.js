@@ -52,9 +52,9 @@ class card {
     }
   }
 }
-const imgSet = async (tmpArray) => {
+const imgSet = (tmpArray) => {
   for (let i = 1; i < 6; i++) {
-    let randomImg = tmpArray.pop();
+    let randomImg = tmpArray.shift();
     console.log(randomImg);
     let img = document.createElement("img");
     img.setAttribute("id", `Blue${i}Img`);
@@ -63,9 +63,8 @@ const imgSet = async (tmpArray) => {
     document.getElementById(`Blue${i}`).appendChild(img);
   }
 };
-
+let tmpArray = [];
 fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks?locale=enUS", {
-
   method: "GET",
   headers: {
     "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
@@ -75,13 +74,11 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks?locale=enUS", {
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
-
-    let tmpArray = [];
-
+    // let tmpArray = [];
     for (var i = 0; i < 176; i++) {
-      tmpArray.push(data[i].imgAnimated);
-
+      tmpArray.push(data[i].img);
     }
+    console.log(tmpArray);
     imgSet(tmpArray);
   });
 
