@@ -94,28 +94,29 @@
 #topDiv {
   display: flex;
   flex-direction: row;
-  grid-template-columns: 3;
   height: 2.6em;
-  text-align: space-between;
-  z-index: 100;
+  width: inherit;
+  justify-content: space-evenly;
+  /* align-items: space-evenly; */
+  z-index: 1;
 }
 #middle {
   display: flex;
   flex-direction: row;
-  grid-template-columns: 3;
   height: 2.6em;
+  width: inherit;
   justify-content: center;
-  align-items: space-between;
-  z-index: 100;
+  align-items: space-evenly;
+  z-index: 1;
 }
 #bottom {
   display: flex;
   flex-direction: row;
-  grid-template-columns: 3;
   height: 2.6em;
+  width: inherit;
   justify-content: center;
-  align-items: space-between;
-  z-index: 100;
+  align-items: space-evenly;
+  z-index: 1;
 }
 
 /* Card background image */
@@ -125,22 +126,22 @@
   height: inherit;
   width: inherit;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
   justify-content: center;
   align-items: center;
 }
 
 /* Arrows generated on sides/corners */
-.arrows {
+/* .arrows {
   display: flex;
   flex-flow: inherit;
-  position: relative;
-}
+  position: absolute;
+} */
 
 /* Stat block for each card */
 .stats {
   display: flex;
-  flex-flow: inherit;
+  flex-flow: row;
   justify-content: center;
   align-content: flex-start;
   z-index: 1;
@@ -149,43 +150,51 @@
 /* classes for arrow dividers */
 .N {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-start; */
+  flex-flow: row;
+  justify-content: center;
 }
 .E {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-end; */
+  flex-flow: row;
+  justify-content: flex-end;
 }
 .S {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-end; */
+  flex-flow: row;
+  justify-content: flex-end;
 }
 .W {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-start; */
+  flex-flow: row;
+  justify-content: flex-start;
 }
 .NW {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-end; */
+  flex-flow: row;
+  justify-content: flex-end;
 }
 .NE {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-start; */
+  flex-flow: row;
+  justify-content: flex-start;
 }
 .SE {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-start; */
+  flex-flow: row;
+  justify-content: flex-start;
 }
 .SW {
   display: flex;
-  flex-flow: inherit;
-  align-content: center;
+  /* float: inline-start; */
+  flex-flow: row;
+  justify-content: flex-end;
 }
 /* #A1 {
 }
