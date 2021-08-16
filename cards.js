@@ -177,13 +177,33 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks?locale=enUS", {
   .then((data) => {
     console.log(data);
     // let tmpArray = [];
-    for (var i = 0; i < 176; i++) {
+    for (var i = 100; i < 176; i++) {
       tmpArray.push(data[i].img);
     }
     // console.log(tmpArray);
     // The imgSet code below can be turned off to not display the API card images when CSS is ready to be applied
     imgSet(tmpArray);
   });
+const effects = ["snow", "hearts", "rain", "snowflake-border", "matrix"];
+console.log(effects);
+let randomeffects = effects[Math.floor(Math.random() * effects.length)];
+console.log(randomeffects);
+fetch(
+  `https://lunapic-photo-effects.p.rapidapi.com/v2/api-call.php?filter=${randomeffects}&${tmpArray}`,
+  {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
+      "x-rapidapi-host": "lunapic-photo-effects.p.rapidapi.com",
+    },
+  }
+)
+  .then((response) => response.json())
+  .then((data) => console.log(data, "fetch data"))
+  .catch((err) => {
+    console.error(err);
+  });
+
 // let randomElement1 = imgArray[Math.floor(Math.random() * imgArray.length)];
 
 // This is the code that generates the card and puts the stats/arrows on the div
