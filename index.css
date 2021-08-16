@@ -15,6 +15,7 @@
   justify-content: space-evenly;
 }
 
+/* Card spaces on game board */
 .space {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,13 +34,18 @@
   display: flex;
   /* border: 5px solid white; */
 }
+
+/* Player's entire hand divider */
 .playerHand {
   background-color: rgb(120, 120, 185);
   flex-direction: column;
   justify-content: space-around;
   gap: 5px;
   margin: 0em 5em;
+  z-index: 1;
 }
+
+/* Individual card divs in player hand */
 .hand {
   flex-direction: column;
   border: 5px solid black;
@@ -48,6 +54,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 #p1 {
@@ -61,6 +68,7 @@
   border: 5px solid rgb(143, 24, 24);
 }
 
+/* Divider containing ".space" dividers */
 #board {
   display: grid;
   padding: 0.5em;
@@ -81,6 +89,103 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+}
+
+#topDiv {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: 3;
+  height: 2.6em;
+  text-align: space-between;
+  z-index: 100;
+}
+#middle {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: 3;
+  height: 2.6em;
+  justify-content: center;
+  align-items: space-between;
+  z-index: 100;
+}
+#bottom {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: 3;
+  height: 2.6em;
+  justify-content: center;
+  align-items: space-between;
+  z-index: 100;
+}
+
+/* Card background image */
+.cardImgs {
+  display: grid;
+  flex-direction: inherit;
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  z-index: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Arrows generated on sides/corners */
+.arrows {
+  display: flex;
+  flex-flow: inherit;
+  position: relative;
+}
+
+/* Stat block for each card */
+.stats {
+  display: flex;
+  flex-flow: inherit;
+  justify-content: center;
+  align-content: flex-start;
+  z-index: 1;
+}
+
+/* classes for arrow dividers */
+.N {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.E {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.S {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.W {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.NW {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.NE {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.SE {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
+}
+.SW {
+  display: flex;
+  flex-flow: inherit;
+  align-content: center;
 }
 /* #A1 {
 }
