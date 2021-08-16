@@ -99,6 +99,7 @@ let aERed5 = document.getElementById("aER5");
 let aSWRed5 = document.getElementById("aSWR5");
 let aSRed5 = document.getElementById("aSR5");
 let aSERed5 = document.getElementById("aSER5");
+let space = document.getElementsByClassName("space");
 function flip() {
   let coin = 0;
   coin = Math.random();
@@ -365,3 +366,14 @@ cardGenerate(
   aSRed5,
   aSERed5
 );
+// let drop = () => {
+//   space.addEventListener("click", () => {
+//     console.log("hello");
+//   });
+// };
+Blue1.addEventListener("click", () => {
+  console.log("clicked B1");
+  space.addEventListener("click", () => {
+    console.log("hello");
+  });
+});
