@@ -99,7 +99,25 @@ let aERed5 = document.getElementById("aER5");
 let aSWRed5 = document.getElementById("aSWR5");
 let aSRed5 = document.getElementById("aSR5");
 let aSERed5 = document.getElementById("aSER5");
+
 let space = document.getElementsByClassName("space");
+let A1 = document.getElementById("A1");
+let A2 = document.getElementById("A2");
+let A3 = document.getElementById("A3");
+let A4 = document.getElementById("A4");
+let B1 = document.getElementById("B1");
+let B2 = document.getElementById("B2");
+let B3 = document.getElementById("B3");
+let B4 = document.getElementById("B4");
+let C1 = document.getElementById("C1");
+let C2 = document.getElementById("C2");
+let C3 = document.getElementById("C3");
+let C4 = document.getElementById("C4");
+let D1 = document.getElementById("D1");
+let D2 = document.getElementById("D2");
+let D3 = document.getElementById("D3");
+let D4 = document.getElementById("D4");
+
 function flip() {
   let coin = 0;
   coin = Math.random();
@@ -185,25 +203,29 @@ fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks?locale=enUS", {
     // The imgSet code below can be turned off to not display the API card images when CSS is ready to be applied
     imgSet(tmpArray);
   });
-const effects = ["snow", "hearts", "rain", "snowflake-border", "matrix"];
-console.log(effects);
-let randomeffects = effects[Math.floor(Math.random() * effects.length)];
-console.log(randomeffects);
-fetch(
-  `https://lunapic-photo-effects.p.rapidapi.com/v2/api-call.php?filter=${randomeffects}&${tmpArray}`,
-  {
-    method: "GET",
-    headers: {
-      "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
-      "x-rapidapi-host": "lunapic-photo-effects.p.rapidapi.com",
-    },
-  }
-)
-  .then((response) => response.json())
-  .then((data) => console.log(data, "fetch data"))
-  .catch((err) => {
-    console.error(err);
-  });
+
+// Second API
+// It was being overcalled so I turned it off
+
+// const effects = ["snow", "hearts", "rain", "snowflake-border", "matrix"];
+// console.log(effects);
+// let randomeffects = effects[Math.floor(Math.random() * effects.length)];
+// console.log(randomeffects);
+// fetch(
+//   `https://lunapic-photo-effects.p.rapidapi.com/v2/api-call.php?filter=${randomeffects}&${tmpArray}`,
+//   {
+//     method: "GET",
+//     headers: {
+//       "x-rapidapi-key": "aae9041da3msh758c6b4e4c4787fp1db3d8jsnfe04f26aaf30",
+//       "x-rapidapi-host": "lunapic-photo-effects.p.rapidapi.com",
+//     },
+//   }
+// )
+//   .then((response) => response.json())
+//   .then((data) => console.log(data, "fetch data"))
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 // let randomElement1 = imgArray[Math.floor(Math.random() * imgArray.length)];
 
@@ -371,9 +393,129 @@ cardGenerate(
 //     console.log("hello");
 //   });
 // };
-Blue1.addEventListener("click", () => {
-  console.log("clicked B1");
-  space.addEventListener("click", () => {
-    console.log("hello");
+let DropCard = (card) => {
+  console.log(card);
+  return new Promise((resolve) => {
+    A1.addEventListener("click", () => {
+      console.log("General Kenobi");
+      A1.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    A2.addEventListener("click", () => {
+      console.log("Bold One");
+      A2.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    A3.addEventListener("click", () => {
+      console.log("Bold One");
+      A3.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    A4.addEventListener("click", () => {
+      console.log("Bold One");
+      A4.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    B1.addEventListener("click", () => {
+      console.log("Bold One");
+      B1.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    B2.addEventListener("click", () => {
+      console.log("Bold One");
+      B2.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    B3.addEventListener("click", () => {
+      console.log("Bold One");
+      B3.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    B4.addEventListener("click", () => {
+      console.log("Bold One");
+      B4.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    C1.addEventListener("click", () => {
+      console.log("Bold One");
+      C1.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    C2.addEventListener("click", () => {
+      console.log("Bold One");
+      C2.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    C3.addEventListener("click", () => {
+      console.log("Bold One");
+      C3.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    C4.addEventListener("click", () => {
+      console.log("Bold One");
+      C4.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    D1.addEventListener("click", () => {
+      console.log("Bold One");
+      D1.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    D2.addEventListener("click", () => {
+      console.log("Bold One");
+      D2.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    D3.addEventListener("click", () => {
+      console.log("Bold One");
+      D3.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    D4.addEventListener("click", () => {
+      console.log("Bold One");
+      D4.appendChild(card);
+      card.style.opacity = "100%";
+    });
+    // return new Promise((resolve) => {
+    resolve();
   });
+};
+async function PickupCard(origin) {
+  console.log("hello there");
+  console.log(origin);
+  // pick up origin
+  origin.style.opacity = "50%";
+  let x = await DropCard(origin);
+  origin = null;
+}
+Blue1.addEventListener("click", () => {
+  PickupCard(Blue1);
+  return;
+});
+Blue2.addEventListener("click", () => {
+  PickupCard(Blue2);
+});
+Blue3.addEventListener("click", () => {
+  PickupCard(Blue3);
+});
+Blue4.addEventListener("click", () => {
+  PickupCard(Blue4);
+});
+Blue5.addEventListener("click", () => {
+  PickupCard(Blue5);
+});
+Red1.addEventListener("click", () => {
+  PickupCard(Red1);
+});
+Red2.addEventListener("click", () => {
+  PickupCard(Red2);
+});
+Red3.addEventListener("click", () => {
+  PickupCard(Red3);
+});
+Red4.addEventListener("click", () => {
+  PickupCard(Red4);
+});
+Red5.addEventListener("click", () => {
+  PickupCard(Red5);
 });
